@@ -53,14 +53,16 @@ pregunta_07()
 
 
 def pregunta_08():
- tbl0['suma'] = tbl0['_c0'] + tbl0['_c2'] 
- return tbl0
+ copy = tbl0.copy()
+ copy['suma'] = copy['_c0'] + copy['_c2'] 
+ return copy
 pregunta_08()
 
 
 def pregunta_09():
- tbl0['year'] = tbl0['_c3'].apply(lambda x: x[0:4])
- return tbl0.drop(['suma'],axis=1)
+ copy2 = tbl0.copy()
+ copy2['year'] = copy2['_c3'].apply(lambda x: x[0:4])
+ return copy2
 pregunta_09()
 
 
