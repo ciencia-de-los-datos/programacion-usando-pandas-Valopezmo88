@@ -74,9 +74,9 @@ def pregunta_10():
    x = list(map(str,x))
    return ":".join(map(str,x))
   a = tbl0.groupby('_c1')['_c2'].apply(aux)
-  return a.reset_index()
+  b = pd.DataFrame(a)
+  return b.reset_index()
 pregunta_10()
-
 
 def pregunta_11():
  def aux(x):
