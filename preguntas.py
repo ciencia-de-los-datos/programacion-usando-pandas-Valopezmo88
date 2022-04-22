@@ -66,58 +66,41 @@ def pregunta_09():
 pregunta_09()
 
 
-def pregunta_10():
-    """
-    Construya una tabla que contenga _c1 y una lista separada por ':' de los valores de
-    la columna _c2 para el archivo `tbl0.tsv`.
 
-    Rta/
-                                   _c1
-      _c0
-    0   A              1:1:2:3:6:7:8:9
-    1   B                1:3:4:5:6:8:9
-    2   C                    0:5:6:7:9
-    3   D                  1:2:3:5:5:7
-    4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
-    """
-    return
+def pregunta_10():
+  def aux(x):
+   x = x.tolist()
+   x.sort()
+   x = list(map(str,x))
+   return ":".join(map(str,x))
+  a = tbl0.groupby('_c1')['_c2'].apply(aux)
+  return a.reset_index()
+pregunta_10()
 
 
 def pregunta_11():
-    """
-    Construya una tabla que contenga _c0 y una lista separada por ',' de los valores de
-    la columna _c4 del archivo `tbl1.tsv`.
-
-    Rta/
-        _c0      _c4
-    0     0    b,f,g
-    1     1    a,c,f
-    2     2  a,c,e,f
-    3     3      a,b
-    ...
-    37   37  a,c,e,f
-    38   38      d,e
-    39   39    a,d,f
-    """
-    return
+ def aux(x):
+  x = x.tolist()
+  x.sort()
+  x = list(map(str,x))
+  return ",".join(map(str,x))
+ a = tbl1.groupby('_c0')['_c4'].apply(aux)
+ return a.reset_index()
+pregunta_11()
 
 
 def pregunta_12():
-    """
-    Construya una tabla que contenga _c0 y una lista separada por ',' de los valores de
-    la columna _c5a y _c5b (unidos por ':') de la tabla `tbl2.tsv`.
-
-    Rta/
-        _c0                                  _c5
-    0     0        bbb:0,ddd:9,ggg:8,hhh:2,jjj:3
-    1     1              aaa:3,ccc:2,ddd:0,hhh:9
-    2     2              ccc:6,ddd:2,ggg:5,jjj:1
-    ...
-    37   37                    eee:0,fff:2,hhh:6
-    38   38                    eee:0,fff:9,iii:2
-    39   39                    ggg:3,hhh:8,jjj:5
-    """
-    return
+ def aux(x):
+  x = x.tolist()
+  x.sort()
+  x = list(map(str,x))
+  return ",".join(map(str,x))
+ cop = tbl2.copy()
+ cop['_c5b'] = cop['_c5b'].apply(str)
+ cop["_c5"] = cop["_c5a"] + ":" + cop["_c5b"] 
+ a = cop.groupby('_c0')['_c5'].apply(aux)
+ return a.reset_index()
+pregunta_12()
 
 
 def pregunta_13():
