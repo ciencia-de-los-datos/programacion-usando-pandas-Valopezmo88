@@ -65,14 +65,14 @@ def pregunta_09():
  return copy2
 pregunta_09()
 
-
 def pregunta_10():
   def aux(x):
     return ":".join(sorted(x.tolist()))
   copia1 = tbl0.copy()
   copia1['_c2'] = copia1['_c2'].apply(str)
   a = copia1.groupby('_c1')._c2.apply(aux)
-  return pd.DataFrame(a)
+  b = pd.DataFrame(a)
+  return b
 pregunta_10()
 
 def pregunta_11():
