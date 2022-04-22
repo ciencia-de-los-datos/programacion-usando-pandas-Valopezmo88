@@ -72,7 +72,7 @@ def pregunta_10():
   copia1 = tbl0.copy()
   copia1['_c2'] = copia1['_c2'].apply(str)
   a = copia1.groupby('_c1')._c2.apply(aux)
-  return a.reset_index()
+  return a
 pregunta_10()
 
 def pregunta_11():
