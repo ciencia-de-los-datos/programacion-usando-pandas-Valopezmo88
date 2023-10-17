@@ -65,6 +65,7 @@ def pregunta_09():
  return copy2
 pregunta_09()
 
+
 def pregunta_10():
   def aux(x):
     return ":".join(sorted(x.tolist()))
@@ -74,6 +75,7 @@ def pregunta_10():
   b = pd.DataFrame(a)
   return b
 pregunta_10()
+
 
 def pregunta_11():
  def aux(x):
