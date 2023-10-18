@@ -24,14 +24,14 @@ def pregunta_02():
 pregunta_02()
 
 
-def pregunta_03(): 
+def pregunta_03():
  return tbl0['_c1'].value_counts().sort_index(ascending=True)
-pregunta_03()
+pregunta_03()    
 
 
 def pregunta_04():
  return tbl0.groupby('_c1').mean()['_c2']
-pregunta_04()
+pregunta_04()    
 
 
 def pregunta_05():
@@ -44,7 +44,6 @@ def pregunta_06():
  lista_up = map(lambda x: x.upper(), lista)
  return list(lista_up)
 pregunta_06()
-
 
 
 def pregunta_07():
